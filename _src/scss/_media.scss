@@ -1,0 +1,31 @@
+$min-width: 320px; // min screen width
+$phone-old: 480px; // Old smartphones
+$sm: 576px;
+$phone: 640px; // Small tablets and large smartphones (landscape view)
+$tablet: 822px; // Small tablets (portrait view)
+$laptop: 992px; // Tablets and small desktops
+$desktop: 1200px; // Large tablets and desktops
+$mid-desktop: 1400px; // Large tablets and desktops
+$big-desktop: 1600px; // Large tablets and desktops
+
+
+
+@mixin media-for($min-width, $max-width: null) {
+	@if $min-width !=null and $max-width !=null {
+		@media (min-width: #{$min-width}) and (max-width: #{$max-width - 1px}) {
+			@content;
+		}
+	}
+
+	@else if ($min-width !=null) {
+		@media (min-width: #{$min-width}) {
+			@content;
+		}
+	}
+
+	@else if ($max-width !=null) {
+		@media (max-width: #{$max-width - 1px}) {
+			@content;
+		}
+	}
+}
