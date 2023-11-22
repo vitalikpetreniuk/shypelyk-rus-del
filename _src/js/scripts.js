@@ -1,4 +1,76 @@
+
 var $ = jQuery;
+
+
+
+
+
+$(document).ready(function(){
+ 
+    $('.open-menu').on('click', function(){
+     
+      setTimeout(function(){
+        $('.modal-btn').addClass('active');
+      }, 2000);
+    });
+
+
+
+
+
+
+    $('.modal-btn button').on('click', function(){
+     
+        $('.modal-btn').removeClass('active');
+
+        $('.modal-text').addClass('active');
+
+        setTimeout(function(){
+            $('.modal-text .modal-wrap p').text("ДІСТАЄМО ПЕРВОЛЬ");
+
+            setTimeout(function(){
+                $('.modal-text .modal-wrap p').text("ВИДАЛЕННЯ МАЙЖЕ ЗАВЕРШЕНО");
+
+                setTimeout(function(){
+                    $('.modal-text .modal-wrap').css("display", "none");
+                    $('.modal-text .modal-congrat').css("display", "block");
+                    $('.ru-del').css("display", "none");
+                    confetti()
+                        setTimeout(function(){
+                            confetti()
+
+                            setTimeout(function(){
+                                confetti()
+
+                                setTimeout(function(){
+                                    confetti()
+                                    setTimeout(function(){
+                                        confetti()
+
+                                        setTimeout(function(){
+                                            confetti()
+
+                                            setTimeout(function(){
+                                                confetti()
+                                            }, 100);
+                                        }, 100);
+                                    }, 100);
+
+                                }, 100);
+                            }, 100);
+                        }, 100);
+                  }, 2000);
+
+              }, 2000);
+
+          }, 2000);
+    });
+
+
+
+    
+
+});
 
 
 // import {setLocaleData} from '@wordpress/i18n'
